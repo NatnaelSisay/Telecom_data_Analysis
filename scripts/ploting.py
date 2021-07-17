@@ -54,3 +54,10 @@ def plot_scatter(df: pd.DataFrame, x_col: str, y_col: str, title: str, hue: str,
     plt.xticks(fontsize=14)
     plt.yticks( fontsize=14)
     plt.show()
+
+def serious_bar(serious, ax):
+    '''
+    Plot bar chart for serious data types
+    '''
+    
+    return sns.barplot(x=serious.index, y=serious, ax=ax)
