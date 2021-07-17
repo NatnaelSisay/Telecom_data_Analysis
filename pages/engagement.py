@@ -130,6 +130,6 @@ def run_engagement():
   st.write("App per Engagement ")
   app_engagement(user_df)
 
-  st.write("## From The graph we can see Users are Engaged More or Gaming, Other and Youtube more than other applications")
+  st.write("## From The graph we can see Users are Engaged on Gaming, Other ,Youtube and Netflix more than other applications")
   st.write("So The We should give more focus on Gaming Than other apps")
   st.pyplot()
