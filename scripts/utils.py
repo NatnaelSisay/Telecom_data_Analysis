@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 
 def null_percentage(df):
     number_of_rows, number_of_columns = df.shape
@@ -24,3 +24,8 @@ def drop_column_with_many_null(df):
     bad_columns.append('Dur. (ms).1')
     df = df.drop(bad_columns, axis=1)
     return df
+
+def fix_outlier(df, column):
+    df[column] = np.where(df[column] > df[column].quantile(0.95), df[column].median(),df[column])
+    
+    return df[column]

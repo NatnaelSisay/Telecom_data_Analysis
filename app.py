@@ -4,7 +4,10 @@ import streamlit as st
 
 # pages
 import pages.intro as intro
-
+import pages.marketing as marketing
+import pages.engagement as enngagement
+import pages.experiance as experiance
+import pages.satisfaction as satisfaction
 
 st.set_page_config(page_title="Day 5", layout="wide")
 st.title("TelCo Data analysis")
@@ -16,12 +19,12 @@ page = st.sidebar.selectbox('Choose Page', ['Intro', 'Marketing', 'Engagement', 
 if(page == 'Intro'):
   intro.run()
 elif(page == 'Marketing'):
-  pass
+  marketing.run_marketing()
 elif(page == 'Engagement'):
-  pass
+  enngagement.run_engagement()
 elif(page == 'Experiance'):
-  pass
+  experiance.run_experiance()
 elif(page == 'Satisfaction'):
-  pass
+  satisfaction.run_satisfaction()
 else:
   intro.run()
