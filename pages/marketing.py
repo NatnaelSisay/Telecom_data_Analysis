@@ -9,7 +9,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 
 
 def run_marketing():
-  st.write("Marketing Analysis")
+  st.write("## Marketing Analysis")
 
   file_name = 'data/clean_telco.csv'
   df_clean = pd.read_csv(file_name)

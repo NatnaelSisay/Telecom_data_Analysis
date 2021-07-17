@@ -5,6 +5,7 @@ import streamlit as st
 # pages
 import pages.intro as intro
 import pages.marketing as marketing
+import pages.engagement as enngagement
 
 st.set_page_config(page_title="Day 5", layout="wide")
 st.title("TelCo Data analysis")
@@ -18,7 +19,7 @@ if(page == 'Intro'):
 elif(page == 'Marketing'):
   marketing.run_marketing()
 elif(page == 'Engagement'):
-  pass
+  enngagement.run_engagement()
 elif(page == 'Experiance'):
   pass
 elif(page == 'Satisfaction'):
