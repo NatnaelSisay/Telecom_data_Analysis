@@ -1,2 +1,3 @@
 /notebooks/.ipynb_checkpoints
-/myscripts/__pycache__
+/myscripts/__pycache__/
+myscripts/__pycache__/__init__.cpython-38.pyc
