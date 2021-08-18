@@ -40,6 +40,14 @@ class DataFrameCleaning():
     self.drop_columns(column)
 
 
+  def drop_rows(self, columns):
+    '''
+    Drop Rows of specified columns, which contain null values
+    apply it on columns with small number of nulls
+    '''
+    self.df.dropna(subset=columns, inplace=True)
+
+
   def convert_datetime(self, columns):
     '''
     Convert columns to date time.
@@ -69,11 +77,17 @@ class DataFrameCleaning():
     '''
 
     mode = self.df[column].mode()[0]
-    self.df[column].fillna(mode)
-    
-    return self.df
+    self.df[column] = self.df[column].fillna(mode)
 
+
+  def fill_catagorical_columns(self, columns):
+    '''
+    Fill Null values of multiple columns with Mode.
+    '''
+    for column in columns:
+      self.fill_catagorical_column(column)
   
+
   def fill_numerical_column(self, column):
     '''
     Reuturn DataFrame with Numerical null values filled with 
@@ -93,7 +107,14 @@ class DataFrameCleaning():
       # highly skewed 
       self.df[column].fillna(self.df[column].median())
 
-    return self.df
+
+  def fill_numerical_columns(self, columns):
+    '''
+    Fill Numerical multiple numerical columns with median and mode
+    depending on their skewness.
+    '''
+    for column in columns:
+      self.fill_numerical_column(column)
 
 
   def fix_outliers(self, col):
@@ -109,5 +130,10 @@ class DataFrameCleaning():
     self.df[col] = np.where(self.df[col] < lower_bound, lower_bound, self.df[col])
     self.df[col] = np.where(self.df[col] > upper_bound, upper_bound, self.df[col])
 
-    return self.df
+
+  def save_clean(self):
+    try:
+      self.df.to_csv('../data/clean_telecom_data.csv', index=False)
+    except:
+      print('Log: Error while Saving File')
   
