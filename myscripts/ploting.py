@@ -10,6 +10,13 @@ def plot_hist(df:pd.DataFrame, column:str, color:str, ax)->None:
     plt.title(f'Distribution of {column}', size=20, fontweight='bold')
     plt.show()
 
+def hist(df:pd.DataFrame, column:str, color:str)->None:
+    plt.figure(figsize=(9, 7))
+    sns.displot(data=df, x=column, color=color, kde=True, height=7, aspect=2)
+    plt.title(f'Distribution of {column}', size=20, fontweight='bold')
+    plt.show()
+    
+
 def plot_count(df:pd.DataFrame, column:str) -> None:
     plt.figure(figsize=(12, 7))
     sns.countplot(data=df, x=column)
