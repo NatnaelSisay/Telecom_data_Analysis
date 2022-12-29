@@ -1,7 +1,7 @@
 # User Analytics in the Telecommunication
 Analysis on Telecom Dataset, to get insight about the performance of the company based on user data.
 ## Introduction
-In this project we will analyze the user data of TellCo, a telecom compnay based in the Republic of Pefkakia. Our goal is to provide insight on wather to buy or sell TellCo. This is done after the analysis of the data set wich contain user full information about the users activities on  the network.
+The TellCo, a telecom company with headquarters in the Republic of Pefkakia, user data will be analyzed in this research. We want to help you decide whether to purchase or sell TellCo by offering advice. This is carried out following examination of the data set, which includes comprehensive information about users' online activity.
 
 ## Table of content
 - [Instalation](#installation)
